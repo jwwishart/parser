@@ -1,0 +1,18 @@
+
+- Tokenizers
+    - CSV
+    - JSON
+    - HTML (?)
+    - erg (?)
+
+- Parser
+    - Construct AST or Data Structure for the data
+        - CSV   - Just a multidimentional array
+        - JSON  - Dictionaries and arrays with type of items etc and mechanisms
+          to iterated etc...
+        - HTML  - AST of Html Structure
+        - erg   - or custom language? Parser and give an AST of code
+
+- Validation
+    - Ensure structure
+    - Give error messages
