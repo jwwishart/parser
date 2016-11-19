@@ -9,6 +9,7 @@ extern "C" {
 
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 
 enum ScannerContextType 
 {
@@ -17,6 +18,7 @@ enum ScannerContextType
     // Stream?
 };
 
+// TODO(jwwishart) Need settings like normalize newlines?
 struct ScannerContext 
 {
     int Length;
@@ -32,6 +34,8 @@ struct ScannerContext
 
 ScannerContext * scanner_init_string(char * contents) 
 {
+    assert(contents != NULL);
+
     auto result = (ScannerContext *)malloc(sizeof(ScannerContext));
     result->Index = -1;
     result->Length = strlen(contents);
@@ -42,6 +46,8 @@ ScannerContext * scanner_init_string(char * contents)
 
 ScannerContext * scanner_dispose_string(ScannerContext * context) 
 {
+    assert(context != NULL);
+
     if (context != NULL) 
     {
         free(context);
@@ -52,11 +58,15 @@ ScannerContext * scanner_dispose_string(ScannerContext * context)
 
 bool scanner_is_eof(ScannerContext* context) 
 {
+    assert(context != NULL);
+
     return context->Index >= context->Length;
 }
 
 char scanner_peek(ScannerContext* context) 
 {
+    assert(context != NULL);
+
     // TODO(jwwishart) we don't really test this 
     if (context->Index == -1) {
         context->Index++;
@@ -73,6 +83,8 @@ char scanner_peek(ScannerContext* context)
 
 char scanner_move_next(ScannerContext* context) 
 {
+    assert(context != NULL);
+
     if (scanner_is_eof(context)) 
     {
         return '\0';

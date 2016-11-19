@@ -1,9 +1,15 @@
 
+- Scanner
+    - From File (buffered)
+    - From Stream? Can something other than file be possible? like a buffered
+      approach or something? in C... ? iostream? what about c is there anything
+      like that in c standard libraries? or is a library usually used for that.
+
 - Tokenizers
-    - CSV
-    - JSON
-    - HTML (?)
-    - erg (?)
+    - CSV - simplest
+    - JSON - simple
+    - HTML (?) fairly complex
+    - erg (?) - yeah... this is the end :o)
 
 - Parser
     - Construct AST or Data Structure for the data

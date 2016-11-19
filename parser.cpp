@@ -3,6 +3,7 @@
 #include "scanner/scanner.h"
 
 // clang++ -std=c++14 -g parser.cpp -o bin/parser
+// ./build.sh && bin/parser
 
 int main() {
     auto context = scanner_init_string((char *)"Hello World");
