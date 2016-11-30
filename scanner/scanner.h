@@ -68,7 +68,8 @@ char scanner_peek(ScannerContext* context)
     assert(context != NULL);
 
     // TODO(jwwishart) we don't really test this 
-    if (context->Index == -1) {
+    if (context->Index == -1) 
+    {
         context->Index++;
     }
 
